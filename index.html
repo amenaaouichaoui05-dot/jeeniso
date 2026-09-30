@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JEENISo</title>
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+
+/* =========================================================
+   JEENISo — Premium Blue Engineering Theme
+   ========================================================= */
+
+:root {
+    --blue: #1683ff;
+    --blue-light: #55b4ff;
+    --blue-dark: #0066d6;
+
+    --bg: #05080d;
+    --bg-2: #080d14;
+
+    --card: #0b111a;
+    --card-hover: #101923;
+
+    --border: rgba(255,255,255,.09);
+    --border-light: rgba(255,255,255,.15);
+
+    --text: #f5f8ff;
+    --muted: #929ba8;
+    --muted-dark: #68727f;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.4);
+
+    --blue-glow:
+        0 0 40px rgba(22,131,255,.18);
+
+    --container: 1400px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    line-height: 1.5;
+}
+
+::selection {
+    background: var(--blue);
+    color: white;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   GLOBAL TECH GRID
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 80%
+        );
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+section {
+    width: 100%;
+
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    padding: 130px 7%;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background:
+        rgba(5,8,13,.72);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+}
+
+.logo {
+    font-size: 24px;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+
+    color: white;
+
+    transition: .3s ease;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+nav ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+
+    list-style: none;
+}
+
+nav a {
+    position: relative;
+
+    color: #9da6b2;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition: .3s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--blue);
+
+    transition: width .3s ease;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    max-width: none;
+
+    padding:
+        180px 7%
+        100px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(22,131,255,.10),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #070b11 0%,
+            #05080d 100%
+        );
+}
+
+
+/* Technical vertical grid */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 79px,
+            rgba(22,131,255,.045) 80px
+        );
+
+    background-size: 80px 100%;
+}
+
+
+/* Blue glow */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -50px;
+    top: 5%;
+
+    background: var(--blue);
+
+    filter: blur(210px);
+
+    opacity: .13;
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1100px;
+}
+
+
+/* =========================================================
+   HERO TAG
+   ========================================================= */
+
+.tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 15px;
+
+    border:
+        1px solid rgba(22,131,255,.45);
+
+    border-radius: 999px;
+
+    color: var(--blue-light);
+
+    background:
+        rgba(22,131,255,.05);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 0 30px rgba(22,131,255,.06);
+}
+
+.tag::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 0 15px var(--blue);
+}
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.hero h1 {
+    max-width: 1100px;
+
+    font-size:
+        clamp(
+            58px,
+            10vw,
+            145px
+        );
+
+    font-weight: 900;
+
+    line-height: .86;
+
+    letter-spacing: -8px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: var(--blue);
+
+    text-shadow:
+        0 0 60px rgba(22,131,255,.2);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.hero p {
+    max-width: 690px;
+
+    margin-top: 38px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(
+            16px,
+            1.5vw,
+            19px
+        );
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 42px;
+}
+
+.btn {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 15px 24px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        border .3s ease,
+        box-shadow .3s ease;
+
+    overflow: hidden;
+}
+
+
+/* Primary */
+
+.primary {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-light),
+            var(--blue-dark)
+        );
+
+    box-shadow:
+        0 10px 35px rgba(22,131,255,.22);
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 45px rgba(22,131,255,.38);
+}
+
+
+/* Secondary */
+
+.secondary {
+    color: #dce7f5;
+
+    border:
+        1px solid var(--border-light);
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.secondary:hover {
+    color: white;
+
+    border-color:
+        var(--blue);
+
+    background:
+        rgba(22,131,255,.06);
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =========================================================
+   SECTION HEADERS
+   ========================================================= */
+
+.section-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--blue);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.section-label::before {
+    content: "";
+
+    width: 25px;
+
+    height: 1px;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 0 10px rgba(22,131,255,.4);
+}
+
+.section-title {
+    max-width: 900px;
+
+    font-size:
+        clamp(
+            38px,
+            5.5vw,
+            76px
+        );
+
+    line-height: .98;
+
+    letter-spacing: -4px;
+
+    font-weight: 800;
+
+    margin-bottom: 65px;
+}
+
+
+/* =========================================================
+   EXPERIENCE CARDS
+   ========================================================= */
+
+.experience {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.experience-card {
+    position: relative;
+
+    padding: 45px;
+
+    min-height: 320px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.012)
+        );
+
+    box-shadow:
+        var(--shadow);
+
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        border .4s ease,
+        background .4s ease;
+}
+
+
+/* Blue top line */
+
+.experience-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            transparent
+        );
+
+    opacity: .8;
+}
+
+
+/* Blue ambient glow */
+
+.experience-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    right: -100px;
+    bottom: -100px;
+
+    background:
+        var(--blue);
+
+    filter: blur(110px);
+
+    opacity: .05;
+}
+
+.experience-card:hover {
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(22,131,255,.38);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22,131,255,.055),
+            rgba(255,255,255,.015)
+        );
+}
+
+.experience-card h3 {
+    font-size: 31px;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 20px;
+}
+
+.experience-card p {
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+.experience-card ul {
+    margin-top: 28px;
+
+    list-style: none;
+}
+
+.experience-card li {
+    position: relative;
+
+    margin: 14px 0;
+
+    padding-left: 24px;
+
+    color: #c9d0da;
+
+    font-size: 14px;
+}
+
+.experience-card li::before {
+    content: "→";
+
+    position: absolute;
+
+    left: 0;
+
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.timeline {
+    position: relative;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--blue),
+            #26313f 40%,
+            transparent
+        );
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 75px;
+
+    margin-bottom: 75px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    left: 10px;
+
+    top: 4px;
+
+    width: 21px;
+    height: 21px;
+
+    border-radius: 50%;
+
+    background:
+        var(--bg);
+
+    border:
+        2px solid var(--blue);
+
+    box-shadow:
+        0 0 0 5px rgba(22,131,255,.08),
+        0 0 25px rgba(22,131,255,.55);
+}
+
+.timeline-year {
+    color: var(--blue);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 9px;
+}
+
+.timeline-item h3 {
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            34px
+        );
+
+    letter-spacing: -1px;
+
+    margin-bottom: 12px;
+}
+
+.timeline-item p {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ENGINEERING DOMAINS
+   ========================================================= */
+
+.domains {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.domain {
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 26px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        linear-gradient(
+            150deg,
+            #0c131c,
+            #070b11
+        );
+
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        border .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+}
+
+
+/* Internal blue gradient */
+
+.domain::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22,131,255,.10),
+            transparent 45%
+        );
+
+    opacity: 0;
+
+    transition:
+        opacity .4s ease;
+}
+
+.domain:hover {
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(22,131,255,.55);
+
+    background:
+        #0d151f;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35),
+        0 0 35px rgba(22,131,255,.07);
+}
+
+.domain:hover::before {
+    opacity: 1;
+}
+
+.domain-number {
+    position: relative;
+
+    z-index: 1;
+
+    color: var(--blue);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 11px;
+}
+
+.domain h3 {
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 20px;
+
+    line-height: 1.1;
+
+    letter-spacing: -.5px;
+}
+
+.domain p {
+    position: relative;
+
+    z-index: 1;
+
+    color: #737d89;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.service {
+    position: relative;
+
+    min-height: 280px;
+
+    padding: 38px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        linear-gradient(
+            145deg,
+            #0e151e,
+            #070b11
+        );
+
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        border .4s ease,
+        box-shadow .4s ease;
+}
+
+
+/* Left blue indicator */
+
+.service::before {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 0;
+
+    left: 0;
+    top: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--blue-light),
+            var(--blue-dark)
+        );
+
+    transition:
+        height .4s ease;
+}
+
+.service:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(22,131,255,.4);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+}
+
+.service:hover::before {
+    height: 100%;
+}
+
+.service-number {
+    color: var(--blue);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+.service h3 {
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            34px
+        );
+
+    letter-spacing: -1.5px;
+
+    margin: 22px 0 14px;
+}
+
+.service p {
+    max-width: 600px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.stat {
+    position: relative;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,.015);
+
+    transition:
+        transform .3s ease,
+        border .3s ease,
+        box-shadow .3s ease;
+}
+
+.stat:hover {
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(22,131,255,.4);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+}
+
+.stat h2 {
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        clamp(
+            38px,
+            5vw,
+            58px
+        );
+
+    font-weight: 500;
+
+    color: var(--blue);
+
+    letter-spacing: -3px;
+
+    text-shadow:
+        0 0 35px rgba(22,131,255,.15);
+}
+
+.stat p {
+    color: #77818e;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.quote {
+    position: relative;
+
+    max-width: none;
+
+    padding:
+        180px 10%;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border-top:
+        1px solid rgba(255,255,255,.05);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.05);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(22,131,255,.14),
+            transparent 45%
+        );
+}
+
+.quote::before {
+    content: "JEENISo";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size:
+        clamp(
+            100px,
+            22vw,
+            350px
+        );
+
+    font-weight: 900;
+
+    color:
+        rgba(22,131,255,.025);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+.quote h2 {
+    position: relative;
+
+    z-index: 2;
+
+    font-size:
+        clamp(
+            40px,
+            7vw,
+            95px
+        );
+
+    font-weight: 800;
+
+    line-height: 1.03;
+
+    letter-spacing: -5px;
+}
+
+.quote span {
+    color: var(--blue);
+
+    text-shadow:
+        0 0 60px rgba(22,131,255,.22);
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+    max-width: none;
+
+    text-align: center;
+
+    border-top:
+        1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(22,131,255,.08),
+            transparent 45%
+        );
+}
+
+.contact .section-label {
+    justify-content: center;
+}
+
+.contact .section-label::before {
+    display: none;
+}
+
+.contact h2 {
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            75px
+        );
+
+    letter-spacing: -4px;
+
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: var(--muted);
+
+    margin-bottom: 35px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    min-height: 80px;
+
+    padding: 25px 7%;
+
+    border-top:
+        1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #5f6975;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+}
+
+footer div:last-child {
+    color: var(--blue);
+
+    opacity: .8;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        #05080d;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        #263444;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--blue);
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .domains {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                60px,
+                11vw,
+                110px
+            );
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        height: 70px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    section {
+        padding:
+            100px 6%;
+    }
+
+    .hero {
+        padding:
+            150px 6% 90px;
+    }
+
+    .hero h1 {
+        letter-spacing: -5px;
+    }
+
+    .domains {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .experience {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        min-height: auto;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    nav {
+        padding: 0 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    section {
+        padding:
+            80px 5%;
+    }
+
+    .hero {
+        min-height: 100svh;
+
+        padding:
+            130px 5% 70px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                48px,
+                16vw,
+                80px
+            );
+
+        letter-spacing: -4px;
+
+        line-height: .9;
+    }
+
+    .hero p {
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-top: 25px;
+    }
+
+    .tag {
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+
+        padding: 8px 12px;
+    }
+
+    .buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size:
+            clamp(
+                38px,
+                12vw,
+                58px
+            );
+
+        letter-spacing: -3px;
+
+        margin-bottom: 45px;
+    }
+
+    .domains {
+        grid-template-columns: 1fr;
+    }
+
+    .domain {
+        min-height: 230px;
+    }
+
+    .services {
+        gap: 12px;
+    }
+
+    .service {
+        min-height: auto;
+
+        padding:
+            30px 25px;
+    }
+
+    .service h3 {
+        font-size: 27px;
+    }
+
+    .experience-card {
+        padding:
+            30px 25px;
+    }
+
+    .experience-card h3 {
+        font-size: 27px;
+    }
+
+    .timeline-item {
+        padding-left: 55px;
+
+        margin-bottom: 60px;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-dot {
+        left: 5px;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .stat {
+        padding:
+            30px 10px;
+    }
+
+    .stat h2 {
+        font-size: 32px;
+    }
+
+    .stat p {
+        font-size: 11px;
+    }
+
+    .quote {
+        padding:
+            120px 6%;
+    }
+
+    .quote h2 {
+        font-size:
+            clamp(
+                38px,
+                11vw,
+                60px
+            );
+
+        letter-spacing: -3px;
+    }
+
+    .contact h2 {
+        font-size:
+            clamp(
+                40px,
+                12vw,
+                60px
+            );
+
+        letter-spacing: -3px;
+    }
+
+    footer {
+        padding:
+            25px 5%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        JEE<span>NISo</span>
+    </div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#domains">Domains</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="tag">
+         11.11.2011 · ENISo · SOUSSE
+        </div>
+
+        <h1>
+            ENGINEERS<br>
+            <span>IN MOTION.</span>
+        </h1>
+
+        <p>
+            JEENISo is where engineering knowledge meets
+            real-world experience. Students transform ideas
+            into projects, develop professional skills and
+            create solutions for real clients.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#journey" class="btn primary">
+                Explore the journey →
+            </a>
+
+            <a href="#services" class="btn secondary">
+                Discover our expertise
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-label">
+        01 / WHO WE ARE
+    </div>
+
+    <h2 class="section-title">
+        Not just students.<br>
+        Future professionals.
+    </h2>
+
+
+    <div class="experience">
+
+        <div class="experience-card">
+
+            <h3>JEENISo</h3>
+
+            <p>
+                The Junior Entreprise ENISo is a non-profit
+                student consulting organization based at the
+                École Nationale d'Ingénieurs de Sousse.
+            </p>
+
+            <p style="margin-top:20px;">
+                Founded in 2011, JEENISo gives engineering
+                students the opportunity to apply their
+                theoretical knowledge through real projects
+                for real clients.
+            </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>The mission</h3>
+
+            <p>
+                Turn academic knowledge into practical
+                professional experience.
+            </p>
+
+            <ul>
+                <li>Real client projects</li>
+                <li>Technical skills</li>
+                <li>Soft skills development</li>
+                <li>Teamwork & leadership</li>
+                <li>Professional experience</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TIMELINE ================= -->
+
+<section id="journey">
+
+    <div class="section-label">
+        02 / THE JOURNEY
+    </div>
+
+    <h2 class="section-title">
+        From classroom<br>
+        to real world.
+    </h2>
+
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                2011
+            </div>
+
+            <h3>The beginning</h3>
+
+            <p>
+                JEENISo is founded within ENISo,
+                creating a bridge between engineering
+                education and the professional world.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                EXPERIENCE
+            </div>
+
+            <h3>Learn by doing</h3>
+
+            <p>
+                Members work on real projects and
+                develop both technical and managerial
+                skills.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                TODAY
+            </div>
+
+            <h3>Build the future</h3>
+
+            <p>
+                From web and mobile development to
+                electronics, mechanics and prototyping,
+                student engineers turn ideas into
+                concrete solutions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DOMAINS ================= -->
+
+<section id="domains">
+
+    <div class="section-label">
+        03 / ENGINEERING DOMAINS
+    </div>
+
+    <h2 class="section-title">
+        Five fields.<br>
+        One engineering mindset.
+    </h2>
+
+
+    <div class="domains">
+
+        <div class="domain">
+            <span class="domain-number">01</span>
+
+            <h3>Mechatronics</h3>
+
+            <p>
+                Combining mechanics, electronics,
+                control and computing.
+            </p>
+        </div>
+
+
+        <div class="domain">
+            <span class="domain-number">02</span>
+
+            <h3>Computer Science</h3>
+
+            <p>
+                Digital solutions, software and
+                intelligent applications.
+            </p>
+        </div>
+
+
+        <div class="domain">
+            <span class="domain-number">03</span>
+
+            <h3>Industrial Electronics</h3>
+
+            <p>
+                Electronic systems and industrial
+                applications.
+            </p>
+        </div>
+
+
+        <div class="domain">
+            <span class="domain-number">04</span>
+
+            <h3>Embedded Telecom</h3>
+
+            <p>
+                Connected and embedded technologies
+                for modern systems.
+            </p>
+        </div>
+
+
+        <div class="domain">
+            <span class="domain-number">05</span>
+
+            <h3>Productics</h3>
+
+            <p>
+                Engineering production and
+                industrial systems.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="section-label">
+        04 / WHAT WE BUILD
+    </div>
+
+    <h2 class="section-title">
+        Ideas become<br>
+        deliverables.
+    </h2>
+
+
+    <div class="services">
+
+        <div class="service">
+
+            <span class="service-number">01 / DIGITAL</span>
+
+            <h3>Web Development</h3>
+
+            <p>
+                Websites, business platforms and
+                custom digital solutions — from
+                design to deployment.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <span class="service-number">02 / MOBILE</span>
+
+            <h3>Mobile Development</h3>
+
+            <p>
+                Mobile applications designed around
+                users, performance and real-world needs.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <span class="service-number">03 / PROTOTYPE</span>
+
+            <h3>Prototyping</h3>
+
+            <p>
+                Transforming ideas into physical
+                prototypes through 3D modelling,
+                printing and iterative testing.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <span class="service-number">04 / MECHANICAL</span>
+
+            <h3>Mechanical Design</h3>
+
+            <p>
+                CAD modelling, dimensioning and
+                manufacturing-oriented engineering.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <span class="service-number">05 / ELECTRONICS</span>
+
+            <h3>Electronic Design</h3>
+
+            <p>
+                From schematics and PCB routing to
+                embedded systems and testing.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <span class="service-number">06 / CONSULTING</span>
+
+            <h3>Student Consulting</h3>
+
+            <p>
+                Engineering students collaborate on
+                projects while gaining professional
+                experience.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section>
+
+    <div class="section-label">
+        05 / BY THE NUMBERS
+    </div>
+
+    <h2 class="section-title">
+        More than a student association.
+    </h2>
+
+
+    <div class="stats">
+
+        <div class="stat">
+            <h2>2011</h2>
+            <p>Founded</p>
+        </div>
+
+        <div class="stat">
+            <h2>4+</h2>
+            <p>International labels</p>
+        </div>
+
+        <div class="stat">
+            <h2>ISO</h2>
+            <p>9001 : 2015 certified</p>
+        </div>
+
+        <div class="stat">
+            <h2>5</h2>
+            <p>Engineering domains</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section>
+
+    <div class="section-label">
+        06 / THE JEENISo EXPERIENCE
+    </div>
+
+    <h2 class="section-title">
+        Learn.<br>
+        Build.<br>
+        Connect.
+    </h2>
+
+
+    <div class="experience">
+
+        <div class="experience-card">
+
+            <h3>For students</h3>
+
+            <p>
+                JEENISo allows students to step outside
+                the classroom and experience what it means
+                to work on professional projects.
+            </p>
+
+            <ul>
+                <li>Develop hard skills</li>
+                <li>Improve communication</li>
+                <li>Work in teams</li>
+                <li>Take responsibility</li>
+                <li>Meet professionals</li>
+            </ul>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>For clients</h3>
+
+            <p>
+                Companies and organizations can collaborate
+                with engineering students to develop
+                innovative technical solutions.
+            </p>
+
+            <ul>
+                <li>Engineering expertise</li>
+                <li>Student creativity</li>
+                <li>Multidisciplinary teams</li>
+                <li>Innovation</li>
+                <li>Concrete deliverables</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUOTE ================= -->
+
+<section class="quote">
+
+    <h2>
+        Don't just learn<br>
+        <span>how things work.</span><br>
+        Build them.
+    </h2>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+    <div class="section-label">
+        07 / LET'S BUILD
+    </div>
+
+    <h2>
+        Have an idea?
+    </h2>
+
+    <p>
+        Let's turn it into something real.
+    </p>
+
+    <a
+        href="mailto:junior.entreprise.eniso@gmail.com"
+        class="btn primary"
+    >
+        Start a conversation →
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        JEENISo · Junior Entreprise ENISo
+    </div>
+
+    <div>
+        Quality is our Business.
+    </div>
+
+</footer>
+
+
+<script>
+
+    /* Small reveal animation */
+
+    const elements = document.querySelectorAll(
+        '.timeline-item, .domain, .service, .stat, .experience-card'
+    );
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+    elements.forEach(el => {
+
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all .7s ease";
+
+        observer.observe(el);
+
+    });
+
+</script>
+
+
+</body>
+</html>
